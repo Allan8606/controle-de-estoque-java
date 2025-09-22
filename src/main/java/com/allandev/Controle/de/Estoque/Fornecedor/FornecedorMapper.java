@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class FornecedorMapper {
 
-    public FornecedorModel mpa(FornecedorDTO fornecedorDTO){
+    public FornecedorModel map(FornecedorDTO fornecedorDTO){
 
         FornecedorModel fornecedorModel = new FornecedorModel();
 
@@ -16,8 +16,18 @@ public class FornecedorMapper {
         fornecedorModel.setContato(fornecedorDTO.getContato());
 
         return fornecedorModel;
+    }
 
+    public FornecedorDTO map(FornecedorModel fornecedorModel){
 
+        FornecedorDTO fornecedorDTO = new FornecedorDTO();
+
+        fornecedorDTO.setId(fornecedorModel.getId());
+        fornecedorDTO.setNome(fornecedorModel.getNome());
+        fornecedorDTO.setLocal(fornecedorModel.getLocal());
+        fornecedorDTO.setContato(fornecedorModel.getContato());
+
+        return fornecedorDTO;
     }
 
 }
