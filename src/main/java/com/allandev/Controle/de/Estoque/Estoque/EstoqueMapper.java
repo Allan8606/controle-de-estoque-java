@@ -16,7 +16,17 @@ public class EstoqueMapper {
         estoqueModel.setLocalizacao(estoqueDTO.getLocalizacao());
 
         return estoqueModel;
+    }
 
+    public EstoqueDTO map(EstoqueModel estoqueModel){
+        EstoqueDTO estoqueDTO = new EstoqueDTO();
 
+        estoqueDTO.setId(estoqueModel.getId());
+        estoqueDTO.setProduto(estoqueModel.getProduto());
+        estoqueDTO.setQuantidade(estoqueModel.getQuantidade());
+        estoqueDTO.setDisponivel(estoqueModel.isDisponivel());
+        estoqueDTO.setLocalizacao(estoqueModel.getLocalizacao());
+
+        return estoqueDTO;
     }
 }

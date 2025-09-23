@@ -16,7 +16,18 @@ public class ProdutoMapper {
         produtoModel.setEstoque(produtoDTO.getEstoque());
 
         return  produtoModel;
+    }
 
+    public ProdutoDTO map(ProdutoModel produtoModel){
+        ProdutoDTO produtoDTO = new ProdutoDTO();
 
+        produtoDTO.setId(produtoModel.getId());
+        produtoDTO.setNome(produtoModel.getNome());
+        produtoDTO.setDescricao(produtoModel.getDescricao());
+        produtoDTO.setPreco(produtoModel.getPreco());
+        produtoDTO.setFornecedor(produtoModel.getFornecedor());
+        produtoDTO.setEstoque(produtoModel.getEstoque());
+
+        return produtoDTO;
     }
 }
