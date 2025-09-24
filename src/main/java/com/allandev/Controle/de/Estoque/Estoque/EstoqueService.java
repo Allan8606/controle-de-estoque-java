@@ -8,6 +8,8 @@ import com.allandev.Controle.de.Estoque.Produto.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class EstoqueService {
 
@@ -20,10 +22,15 @@ public class EstoqueService {
     @Autowired
     private ProdutoMapper produtoMapper;
 
+    @Autowired
+    private ProdutoRepository produtoRepository;
+
 //    Dar entrada em produto: Adicionar uma quantidade de um produto específico no estoque.
     //Receebe um produto que deve ser adicionado e a quantidade a ser adicionada
     public EstoqueDTO adicionaQuantidade(ProdutoDTO produtoDTO, int quantidade){
         ProdutoModel produto = produtoMapper.map(produtoDTO);
+
+        Optional<EstoqueModel> estoqueExistente = estoqueRepository.findByProduto(produto);
 
 
 
